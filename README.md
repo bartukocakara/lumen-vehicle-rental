@@ -7,7 +7,6 @@
 | 2   | [**Dependencies**](#Dependencies)|
 | 3   | [**Setup**](#Setup)|
 | 4   | [**Contacts**](#Contacts)|
-| 5   | [**Hosting**](#Hosting)  |
 
 ### Purpose
 - By using this application user can track all reservations, income, etc...
