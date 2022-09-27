@@ -1,0 +1,359 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Bor Holding API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": "apiteam@swagger.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://borholding.test/api/v1",
+            "description": "OpenApi host"
+        }
+    ],
+    "paths": {
+        "/auth/login": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Login User",
+                "description": "Login User",
+                "operationId": "8cb7742ae98d0990acb2907c4e00bf24",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "User e-mail address",
+                        "required": true,
+                        "example": "aqua@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "Password",
+                        "required": true,
+                        "example": 123456
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Login User"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            }
+        },
+        "/auth/register": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Register User",
+                "description": "Register User",
+                "operationId": "ed42f392010c301892e640067141676e",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "User e-mail address",
+                        "required": true,
+                        "example": "aqua@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "Password",
+                        "required": true,
+                        "example": 123456
+                    },
+                    {
+                        "name": "first_name",
+                        "in": "query",
+                        "description": "First name",
+                        "required": true,
+                        "example": "lidFirstName"
+                    },
+                    {
+                        "name": "last_name",
+                        "in": "query",
+                        "description": "Last name",
+                        "required": true,
+                        "example": "lidLastName"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            }
+        },
+        "/auth/logout": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Logout User",
+                "description": "Logout User",
+                "operationId": "0d29c740dc06d77602af8095bf4654cc",
+                "responses": {
+                    "200": {
+                        "description": "Logout User"
+                    },
+                    "404": {
+                        "description": "Wrong Request"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/auth/refresh-token": {
+            "get": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Refresh Token",
+                "description": "Refresh Token",
+                "operationId": "ce77c30841d171bdb2eb78caac83b880",
+                "responses": {
+                    "200": {
+                        "description": "Refresh Token"
+                    },
+                    "404": {
+                        "description": "Wrong Request"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/reservations": {
+            "get": {
+                "tags": [
+                    "Reservations"
+                ],
+                "summary": "Get Reservation List",
+                "description": "Get reservation List",
+                "parameters": [
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "Search",
+                        "required": false,
+                        "example": "2"
+                    },
+                    {
+                        "name": "sort_field",
+                        "in": "query",
+                        "description": "Sort by field",
+                        "required": false,
+                        "example": "id"
+                    },
+                    {
+                        "name": "sort_order",
+                        "in": "query",
+                        "description": "Sort Order",
+                        "required": false,
+                        "example": "asc"
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": "Per Page",
+                        "required": false,
+                        "example": "10"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Query string parameter",
+                        "required": false,
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/reservations/{reservationId}": {
+            "get": {
+                "tags": [
+                    "Reservations"
+                ],
+                "summary": "Get Reservation Data",
+                "description": "Get reservation Data",
+                "operationId": "34c2dd536f72fc7fca00db2c558e9c40",
+                "parameters": [
+                    {
+                        "name": "reservationId",
+                        "in": "path",
+                        "description": "reservation Id",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Reservations"
+                ],
+                "summary": "Update reservation Data",
+                "description": "Update reservation Data",
+                "operationId": "b8dc43011f824b4764e9bed5e6753e8d",
+                "parameters": [
+                    {
+                        "name": "reservationId",
+                        "in": "path",
+                        "description": "reservation Id",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Reservations"
+                ],
+                "summary": "Create reservation Data",
+                "description": "Create reservation Data",
+                "operationId": "d29e7fc003805aebaddb836e548bfeea",
+                "parameters": [
+                    {
+                        "name": "reservationId",
+                        "in": "path",
+                        "description": "reservation Id",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Reservations"
+                ],
+                "summary": "Delete reservation Data",
+                "description": "Delete reservation Data",
+                "operationId": "0a1ed1bffd9d6e557de99f6bed7af3ce",
+                "parameters": [
+                    {
+                        "name": "reservationId",
+                        "in": "path",
+                        "description": "reservation Id",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "externalDocs": {
+        "description": "Find out more about Swagger",
+        "url": "http://swagger.io"
+    }
+}
