@@ -11,6 +11,9 @@ class BaseRepository implements IRepository
     public const DEFAULT_SORT_FIELD = 'created_at';
     public const DEFAULT_SORT_ORDER = 'asc';
 
+
+    public $sortFields = ['id', 'from_date', 'grand_total'];
+
     protected function handleTable($model, $request, $searchCols)
     {
         $sortFieldInput = $request->input('sort_field', self::DEFAULT_SORT_FIELD);
