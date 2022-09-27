@@ -148,7 +148,7 @@ class ReservationController extends Controller
      *     ),
      *     @OA\Parameter(
      *          name="to_date",
-     *          description="From Date",
+     *          description="To Date",
      *          required=true,
      *          example="2023-01-24 04:59:32",
      *          in="query"
