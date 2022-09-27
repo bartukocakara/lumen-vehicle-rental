@@ -1,5 +1,5 @@
 # Rent a car api
-  <img src="/api-swagger.png" alt="Alt text" title="Borholding Api Png" width="120">
+  <img src="/api-swagger.png" alt="Alt text" title="Borholding Api Png" width="300">
 
 | No. | Topic                   |
 | --- | ------------------------|
