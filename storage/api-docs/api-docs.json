@@ -33,14 +33,14 @@
                         "in": "query",
                         "description": "User e-mail address",
                         "required": true,
-                        "example": "aqua@gmail.com"
+                        "example": "borholding@gmail.com"
                     },
                     {
                         "name": "password",
                         "in": "query",
                         "description": "Password",
                         "required": true,
-                        "example": 123456
+                        "example": "password"
                     }
                 ],
                 "responses": {
@@ -67,28 +67,28 @@
                         "in": "query",
                         "description": "User e-mail address",
                         "required": true,
-                        "example": "aqua@gmail.com"
+                        "example": "borholdingg@gmail.com"
                     },
                     {
                         "name": "password",
                         "in": "query",
                         "description": "Password",
                         "required": true,
-                        "example": 123456
+                        "example": "passwordd"
                     },
                     {
                         "name": "first_name",
                         "in": "query",
                         "description": "First name",
                         "required": true,
-                        "example": "lidFirstName"
+                        "example": "borfirst"
                     },
                     {
                         "name": "last_name",
                         "in": "query",
                         "description": "Last name",
                         "required": true,
-                        "example": "lidLastName"
+                        "example": "borlast"
                     }
                 ],
                 "responses": {
@@ -207,6 +207,102 @@
                         "bearerAuth": []
                     }
                 ]
+            },
+            "post": {
+                "tags": [
+                    "Reservations"
+                ],
+                "summary": "Create reservation Data",
+                "description": "Create reservation Data",
+                "operationId": "c1383379081406847e27382421848af7",
+                "parameters": [
+                    {
+                        "name": "vehicle_id",
+                        "in": "query",
+                        "description": "Vehicle Id",
+                        "required": true,
+                        "example": 2
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": "User ID",
+                        "required": true,
+                        "example": 1
+                    },
+                    {
+                        "name": "from_date",
+                        "in": "query",
+                        "description": "From Date",
+                        "required": true,
+                        "example": "2022-12-24 04:59:32"
+                    },
+                    {
+                        "name": "to_date",
+                        "in": "query",
+                        "description": "From Date",
+                        "required": true,
+                        "example": "2023-01-24 04:59:32"
+                    },
+                    {
+                        "name": "from_location_latitude",
+                        "in": "query",
+                        "description": "From Date",
+                        "required": true,
+                        "example": "80.232"
+                    },
+                    {
+                        "name": "from_location_longitude",
+                        "in": "query",
+                        "description": "From Date",
+                        "required": true,
+                        "example": "30.232"
+                    },
+                    {
+                        "name": "to_location_latitude",
+                        "in": "query",
+                        "description": "From Date",
+                        "required": true,
+                        "example": 1
+                    },
+                    {
+                        "name": "to_location_longitude",
+                        "in": "query",
+                        "description": "From Date",
+                        "required": true,
+                        "example": "-30.323"
+                    },
+                    {
+                        "name": "to_location_longitude",
+                        "in": "query",
+                        "description": "From Date",
+                        "required": true,
+                        "example": "30.322"
+                    },
+                    {
+                        "name": "note",
+                        "in": "query",
+                        "description": "Notes",
+                        "required": true,
+                        "example": "Test Note"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/reservations/{reservationId}": {
@@ -257,39 +353,76 @@
                         "description": "reservation Id",
                         "required": true,
                         "example": 1
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK"
                     },
-                    "400": {
-                        "description": "Bad Request"
+                    {
+                        "name": "vehicle_id",
+                        "in": "query",
+                        "description": "Vehicle Id",
+                        "required": true,
+                        "example": 2
                     },
-                    "401": {
-                        "description": "Unauthorized"
-                    }
-                },
-                "security": [
                     {
-                        "bearerAuth": []
-                    }
-                ]
-            },
-            "post": {
-                "tags": [
-                    "Reservations"
-                ],
-                "summary": "Create reservation Data",
-                "description": "Create reservation Data",
-                "operationId": "d29e7fc003805aebaddb836e548bfeea",
-                "parameters": [
-                    {
-                        "name": "reservationId",
-                        "in": "path",
-                        "description": "reservation Id",
+                        "name": "user_id",
+                        "in": "query",
+                        "description": "User ID",
                         "required": true,
                         "example": 1
+                    },
+                    {
+                        "name": "from_date",
+                        "in": "query",
+                        "description": "From Date",
+                        "required": true,
+                        "example": "2022-12-24 04:59:32"
+                    },
+                    {
+                        "name": "to_date",
+                        "in": "query",
+                        "description": "From Date",
+                        "required": true,
+                        "example": "2023-01-24 04:59:32"
+                    },
+                    {
+                        "name": "from_location_latitude",
+                        "in": "query",
+                        "description": "From Date",
+                        "required": true,
+                        "example": "80.232"
+                    },
+                    {
+                        "name": "from_location_longitude",
+                        "in": "query",
+                        "description": "From Date",
+                        "required": true,
+                        "example": "30.232"
+                    },
+                    {
+                        "name": "to_location_latitude",
+                        "in": "query",
+                        "description": "From Date",
+                        "required": true,
+                        "example": 1
+                    },
+                    {
+                        "name": "to_location_longitude",
+                        "in": "query",
+                        "description": "From Date",
+                        "required": true,
+                        "example": "-30.323"
+                    },
+                    {
+                        "name": "to_location_longitude",
+                        "in": "query",
+                        "description": "From Date",
+                        "required": true,
+                        "example": "30.322"
+                    },
+                    {
+                        "name": "note",
+                        "in": "query",
+                        "description": "Notes",
+                        "required": true,
+                        "example": "Test Note"
                     }
                 ],
                 "responses": {

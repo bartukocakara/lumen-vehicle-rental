@@ -37,14 +37,14 @@ class AuthController extends Controller
      *          name="email",
      *          description="User e-mail address",
      *          required=true,
-     *          example="aqua@gmail.com",
+     *          example="borholding@gmail.com",
      *          in="query"
      *     ),
      *     @OA\Parameter(
      *          name="password",
      *          description="Password",
      *          required=true,
-     *          example=123456,
+     *          example="password",
      *          in="query"
      *     ),
      *     @OA\Response(
@@ -76,28 +76,28 @@ class AuthController extends Controller
      *          name="email",
      *          description="User e-mail address",
      *          required=true,
-     *          example="aqua@gmail.com",
+     *          example="borholdingg@gmail.com",
      *          in="query"
      *     ),
      *     @OA\Parameter(
      *          name="password",
      *          description="Password",
      *          required=true,
-     *          example=123456,
+     *          example="passwordd",
      *          in="query"
      *     ),
      *     @OA\Parameter(
      *          name="first_name",
      *          description="First name",
      *          required=true,
-     *          example="lidFirstName",
+     *          example="borfirst",
      *          in="query"
      *     ),
      *     @OA\Parameter(
      *          name="last_name",
      *          description="Last name",
      *          required=true,
-     *          example="lidLastName",
+     *          example="borlast",
      *          in="query"
      *     ),
      *     @OA\Response(

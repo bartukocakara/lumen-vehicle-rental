@@ -120,17 +120,80 @@ class ReservationController extends Controller
 
     /**
      * @OA\POST(
-     *     path="/reservations/{reservationId}",
+     *     path="/reservations",
      *     summary="Create reservation Data",
      *     description="Create reservation Data",
      *     security={{"bearerAuth":{}}},
      *     tags={"Reservations"},
      *     @OA\Parameter(
-     *          name="reservationId",
-     *          description="reservation Id",
+     *          name="vehicle_id",
+     *          description="Vehicle Id",
+     *          required=true,
+     *          example=2,
+     *          in="query"
+     *     ),
+     *     @OA\Parameter(
+     *          name="user_id",
+     *          description="User ID",
      *          required=true,
      *          example=1,
-     *          in="path"
+     *          in="query"
+     *     ),
+     *     @OA\Parameter(
+     *          name="from_date",
+     *          description="From Date",
+     *          required=true,
+     *          example="2022-12-24 04:59:32",
+     *          in="query"
+     *     ),
+     *     @OA\Parameter(
+     *          name="to_date",
+     *          description="From Date",
+     *          required=true,
+     *          example="2023-01-24 04:59:32",
+     *          in="query"
+     *     ),
+     *     @OA\Parameter(
+     *          name="from_location_latitude",
+     *          description="From Date",
+     *          required=true,
+     *          example="80.232",
+     *          in="query"
+     *     ),
+     *     @OA\Parameter(
+     *          name="from_location_longitude",
+     *          description="From Date",
+     *          required=true,
+     *          example="30.232",
+     *          in="query"
+     *     ),
+     *     @OA\Parameter(
+     *          name="to_location_latitude",
+     *          description="From Date",
+     *          required=true,
+     *          example=1,
+     *          in="query"
+     *     ),
+     *     @OA\Parameter(
+     *          name="to_location_longitude",
+     *          description="From Date",
+     *          required=true,
+     *          example="-30.323",
+     *          in="query"
+     *     ),
+     *     @OA\Parameter(
+     *          name="to_location_longitude",
+     *          description="From Date",
+     *          required=true,
+     *          example="30.322",
+     *          in="query"
+     *     ),
+     *     @OA\Parameter(
+     *          name="note",
+     *          description="Notes",
+     *          required=true,
+     *          example="Test Note",
+     *          in="query"
      *     ),
      *     @OA\Response(
      *          response=200,
@@ -166,6 +229,76 @@ class ReservationController extends Controller
      *          required=true,
      *          example=1,
      *          in="path"
+     *     ),
+     *     @OA\Parameter(
+     *          name="vehicle_id",
+     *          description="Vehicle Id",
+     *          required=true,
+     *          example=2,
+     *          in="query"
+     *     ),
+     *     @OA\Parameter(
+     *          name="user_id",
+     *          description="User ID",
+     *          required=true,
+     *          example=1,
+     *          in="query"
+     *     ),
+     *     @OA\Parameter(
+     *          name="from_date",
+     *          description="From Date",
+     *          required=true,
+     *          example="2022-12-24 04:59:32",
+     *          in="query"
+     *     ),
+     *     @OA\Parameter(
+     *          name="to_date",
+     *          description="From Date",
+     *          required=true,
+     *          example="2023-01-24 04:59:32",
+     *          in="query"
+     *     ),
+     *     @OA\Parameter(
+     *          name="from_location_latitude",
+     *          description="From Date",
+     *          required=true,
+     *          example="80.232",
+     *          in="query"
+     *     ),
+     *     @OA\Parameter(
+     *          name="from_location_longitude",
+     *          description="From Date",
+     *          required=true,
+     *          example="30.232",
+     *          in="query"
+     *     ),
+     *     @OA\Parameter(
+     *          name="to_location_latitude",
+     *          description="From Date",
+     *          required=true,
+     *          example=1,
+     *          in="query"
+     *     ),
+     *     @OA\Parameter(
+     *          name="to_location_longitude",
+     *          description="From Date",
+     *          required=true,
+     *          example="-30.323",
+     *          in="query"
+     *     ),
+     *     @OA\Parameter(
+     *          name="to_location_longitude",
+     *          description="From Date",
+     *          required=true,
+     *          example="30.322",
+     *          in="query"
+     *     ),
+     *     @OA\Parameter(
+     *          name="note",
+     *          description="Notes",
+     *          required=true,
+     *          example="Test Note",
+     *          in="query"
      *     ),
      *     @OA\Response(
      *          response=200,
